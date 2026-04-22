@@ -1,0 +1,5 @@
+{{- $inner := trim .Inner "\n\r" -}}
+<div class="mermaid-diagram">
+  <template class="mermaid-source">{{ $inner }}</template>
+  <pre class="mermaid">{{ $inner }}</pre>
+</div>

@@ -1,0 +1,21 @@
+{{- $needs := and .IsPage (strings.Contains .RawContent "```mermaid") -}}
+{{- if $needs -}}
+{{- $mp := site.Params.mermaidPallete | default dict -}}
+{{- $preserve := true -}}
+{{- if isset $mp "preserveInlineColors" -}}
+  {{- $preserve = $mp.preserveInlineColors -}}
+{{- end -}}
+<script>
+window.__MERMAID_PALLETE__ = { preserveInlineColors: {{ $preserve }} };
+</script>
+<script src="https://unpkg.com/mermaid@11.6.0/dist/mermaid.min.js" defer></script>
+{{- $init := resources.Get "js/mermaid-init.js" -}}
+{{- if $init -}}
+  {{- if hugo.IsProduction -}}
+    {{- $init = $init | minify | fingerprint -}}
+<script src="{{ $init.RelPermalink }}" integrity="{{ $init.Data.Integrity }}" defer></script>
+  {{- else -}}
+<script src="{{ $init.RelPermalink }}" defer></script>
+  {{- end -}}
+{{- end -}}
+{{- end -}}

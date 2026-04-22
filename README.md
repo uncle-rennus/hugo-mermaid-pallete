@@ -117,6 +117,18 @@ Use a pseudo-version or `v0.0.0` in `require` while replacing. Do not commit `re
 | `hugo.toml` | Minimum Hugo version |
 | `go.mod` | Go module path for Hugo |
 
+## Publish / first-time setup (maintainers)
+
+This module is developed in its **own Git repository** (not inside a consumer site). After cloning:
+
+```bash
+git remote add origin https://github.com/cantalops/hugo-mermaid-pallete.git
+git push -u origin main
+git push origin v0.1.0   # annotated tag for hugo mod get
+```
+
+Create the empty **`cantalops/hugo-mermaid-pallete`** repo on GitHub first if it does not exist. Consumer sites should **not** use a `replace` directive once the tag is public.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).

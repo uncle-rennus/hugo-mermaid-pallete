@@ -12,9 +12,9 @@ Thanks for helping improve this module.
 
    go 1.22
 
-   replace github.com/cantalops/hugo-mermaid-pallete => ../hugo-mermaid-pallete
+   replace github.com/uncle-rennus/hugo-mermaid-pallete => ../hugo-mermaid-pallete
 
-   require github.com/cantalops/hugo-mermaid-pallete v0.0.0
+   require github.com/uncle-rennus/hugo-mermaid-pallete v0.0.0
    ```
 
 3. In the site `hugo.toml` / `config.toml`:
@@ -22,7 +22,7 @@ Thanks for helping improve this module.
    ```toml
    [module]
      [[module.imports]]
-       path = "github.com/cantalops/hugo-mermaid-pallete"
+       path = "github.com/uncle-rennus/hugo-mermaid-pallete"
    ```
 
 4. Add `{{ partial "mermaid-pallete/inject.html" . }}` to your base layout and a test page with a ` ```mermaid ` fence.

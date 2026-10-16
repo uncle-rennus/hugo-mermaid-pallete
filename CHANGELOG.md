@@ -20,4 +20,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - The directory and param key use the spelling **pallete** (historical); a future major release may rename to `palette`.
 
-[0.1.0]: https://github.com/cantalops/hugo-mermaid-pallete/releases/tag/v0.1.0
+[0.1.0]: https://github.com/uncle-rennus/hugo-mermaid-pallete/releases/tag/v0.1.0

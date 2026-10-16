@@ -16,7 +16,7 @@ From your Hugo site root:
 
 ```bash
 hugo mod init github.com/youruser/yoursite   # if you do not already have go.mod
-hugo mod get github.com/cantalops/hugo-mermaid-pallete@v0.1.0
+hugo mod get github.com/uncle-rennus/hugo-mermaid-pallete@v0.1.0
 ```
 
 In **`hugo.toml`** or **`config.toml`**:
@@ -24,7 +24,7 @@ In **`hugo.toml`** or **`config.toml`**:
 ```toml
 [module]
   [[module.imports]]
-    path = "github.com/cantalops/hugo-mermaid-pallete"
+    path = "github.com/uncle-rennus/hugo-mermaid-pallete"
 ```
 
 Optional — control inline diagram colors:
@@ -102,7 +102,7 @@ Edge cases: colors embedded only in node text, or unusual syntax; see upstream M
 In your test site **`go.mod`**:
 
 ```go
-replace github.com/cantalops/hugo-mermaid-pallete => ../hugo-mermaid-pallete
+replace github.com/uncle-rennus/hugo-mermaid-pallete => ../hugo-mermaid-pallete
 ```
 
 Use a pseudo-version or `v0.0.0` in `require` while replacing. Do not commit `replace` lines in libraries meant for others — only in your local site.
@@ -122,12 +122,12 @@ Use a pseudo-version or `v0.0.0` in `require` while replacing. Do not commit `re
 This module is developed in its **own Git repository** (not inside a consumer site). After cloning:
 
 ```bash
-git remote add origin https://github.com/cantalops/hugo-mermaid-pallete.git
+git remote add origin https://github.com/uncle-rennus/hugo-mermaid-pallete.git
 git push -u origin main
 git push origin v0.1.0   # annotated tag for hugo mod get
 ```
 
-Create the empty **`cantalops/hugo-mermaid-pallete`** repo on GitHub first if it does not exist. Consumer sites should **not** use a `replace` directive once the tag is public.
+Create the empty **`uncle-rennus/hugo-mermaid-pallete`** repo on GitHub first if it does not exist. Consumer sites should **not** use a `replace` directive once the tag is public.
 
 ## License
 
